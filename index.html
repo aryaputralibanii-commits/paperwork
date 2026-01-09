@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>LSPD - Arrest Report Form</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: "Courier New", Courier, monospace;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            width: 800px;
+            padding: 40px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 { font-size: 24px; margin: 0; }
+        .header h2 { font-size: 18px; margin: 5px 0; font-weight: normal; }
+        
+        .form-row {
+            display: flex;
+            border-bottom: 1px solid #000;
+        }
+        .box {
+            padding: 5px;
+            border-right: 1px solid #000;
+            flex: 1;
+        }
+        .box:last-child { border-right: none; }
+        .label {
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+        }
+        input, textarea, select {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            padding: 2px 0;
+            background: transparent;
+        }
+        .narrative {
+            margin-top: 20px;
+            height: 300px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            text-align: right;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #1a237e;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        @media print {
+            button { display: none; }
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>LOS SANTOS POLICE DEPARTMENT</h1>
+        <h2>ARREST REPORT / BOOKING RECORD</h2>
+    </div>
+
+    <div class="form-row">
+        <div class="box" style="flex: 2;">
+            <span class="label">1. Nama Lengkap (Last, First, Middle)</span>
+            <input type="text" placeholder="DOE, JOHN">
+        </div>
+        <div class="box">
+            <span class="label">2. Jenis Kelamin</span>
+            <select>
+                <option>MALE</option>
+                <option>FEMALE</option>
+                <option>NON-BINARY</option>
+            </select>
+        </div>
+        <div class="box">
+            <span class="label">3. Tanggal Lahir</span>
+            <input type="text" placeholder="MM/DD/YYYY">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="box">
+            <span class="label">4. DR Number (Case ID)</span>
+            <input type="text" placeholder="24-00123">
+        </div>
+        <div class="box">
+            <span class="label">5. Lokasi Penangkapan</span>
+            <input type="text" placeholder="Strawberry Ave / Forum Dr">
+        </div>
+        <div class="box">
+            <span class="label">6. Tanggal/Waktu</span>
+            <input type="text" placeholder="JAN 09, 2026 - 14:00">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="box">
+            <span class="label">7. Tuduhan Utama (Charge)</span>
+            <input type="text" placeholder="PC 211 - Armed Robbery">
+        </div>
+        <div class="box" style="flex: 0.5;">
+            <span class="label">8. Klasifikasi</span>
+            <select>
+                <option>FELONY</option>
+                <option>MISDEMEANOR</option>
+                <option>INFRACTION</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="narrative">
+        <span class="label">9. Narasi Penangkapan (Kronologi)</span>
+        <textarea rows="15" placeholder="Tuliskan detail kronologi kejadian di sini..."></textarea>
+    </div>
+
+    <div class="form-row" style="border-top: 2px solid #000;">
+        <div class="box">
+            <span class="label">10. Petugas Pelapor (Name/Badge)</span>
+            <input type="text" placeholder="Ofc. Smith #7721">
+        </div>
+        <div class="box">
+            <span class="label">11. Divisi/Unit</span>
+            <input type="text" placeholder="Patrol / Metro">
+        </div>
+    </div>
+
+    <div class="footer">
+        LSPD FORM 15.07.00 (REV 01/26)
+    </div>
+
+    <button onclick="window.print()">Cetak ke PDF</button>
+</div>
+
+</body>
+</html>
